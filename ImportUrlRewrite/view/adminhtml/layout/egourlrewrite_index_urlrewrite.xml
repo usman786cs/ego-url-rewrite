@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Date: 30.01.2023
+ *
+ * @author M. Usman usman.786cs@gmail.com
+ * @package Ego_ImportUrlRewrite
+ */
+-->
+<page layout="admin-1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Ego\ImportUrlRewrite\Block\Adminhtml\UrlRewrites" name="submit.csv" template="Ego_ImportUrlRewrite::submit_csv.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

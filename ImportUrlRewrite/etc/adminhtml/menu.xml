@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Date: 30.01.2023
+ *
+ * @author M. Usman usman.786cs@gmail.com
+ * @package Ego_ImportUrlRewrite
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ego_ImportUrlRewrite::ego_url_rewrite" title="Import URL Rewrites" module="Ego_ImportUrlRewrite" parent="Magento_Backend::marketing_seo" sortOrder="30" action="egourlrewrite/index/urlrewrite" resource="Ego_ImportUrlRewrite::ego_url_rewrite"/>
+    </menu>
+</config>

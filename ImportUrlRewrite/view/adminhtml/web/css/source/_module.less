@@ -1,0 +1,90 @@
+//
+//  Module Design - ImportURLRewrite
+//  _____________________________________________
+
+<!--
+/**
+ * Date: 30.01.2023
+ *
+ * @author M. Usman usman.786cs@gmail.com
+ * @package Ego_ImportUrlRewrite
+ */
+-->
+
+& when (@media-common = true) {
+    .ego-urlrewrite-urlrewrite {
+
+        //
+        //  Page Action Area
+        //  _____________________________________________
+        .page-main-actions {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 100%;
+            .page-actions {
+                margin-left: auto;
+                margin-right: 0;
+            }
+            .info-area {
+                margin-right: auto;
+                margin-left: 0;
+                .main-title {
+                    margin: 0;
+                    padding: 12px 0;
+                    font-weight: 500;
+                    color: #000000;
+                    font-size: 17px;
+                }
+            }
+        }
+
+        //
+        //  Page Form Fieldset
+        //  _____________________________________________
+        .admin__fieldset {
+            .admin__field-control-available-stores {
+                margin: 0 0 25px 30px;
+                .selected-store {
+                    min-width: 250px;
+                }
+            }
+            .admin__field-control-available-stores,
+            .admin__field-control {
+                .admin__field-label {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    line-height: 3.2rem;
+                    padding: 0;
+                    white-space: nowrap;
+                    margin-right: 10px;
+                }
+            }
+            .admin__field-control-csv-uploader {
+                .admin__field-label {
+                    margin-right: 34px;
+                }
+                input[type='file']::-webkit-file-upload-button {
+                    background-color: #eb5202;
+                    color: #ffffff;
+                    border: unset;
+                    padding: 13px 30px;
+                    font-size: 1.45rem;
+                    letter-spacing: .025em;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+                input[type='file']::-ms-browse {
+                    background-color: #eb5202;
+                    color: #ffffff;
+                    border: unset;
+                    padding: 13px 30px;
+                    font-size: 1.45rem;
+                    letter-spacing: .025em;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}

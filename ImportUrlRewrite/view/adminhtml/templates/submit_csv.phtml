@@ -1,0 +1,64 @@
+<?php
+/**
+ * Date: 30.01.2023
+ *
+ * @author M. Usman usman.786cs@gmail.com
+ * @package Ego_ImportUrlRewrite
+ */
+
+/** @var $block \Ego\ImportUrlRewrite\Block\Adminhtml\UrlRewrites */
+/** @var $escaper \Magento\Framework\Escaper */
+?>
+
+<?php
+$availableStores = $block->getAvailableStores();
+?>
+
+<div class="page-main-actions custom-action-bar">
+    <div class="info-area">
+        <h2 class="main-title"><?= $escaper->escapeHtml(__('Generate URL Rewrites')) ?></h2>
+    </div>
+</div>
+
+<form action="<?= $this->getUrl('egourlrewrite/index/save') ?>" method="post" enctype="multipart/form-data">
+    <?= $block->getBlockHtml('formkey') ?>
+    <fieldset class="admin__fieldset admin__fieldset-import-service">
+        <div class="fieldset admin__field">
+            <div class="admin__field-control-available-stores">
+                <label for="available_stores" class="admin__field-label">
+                    <span><?= $escaper->escapeHtml(__('Please Select Store:')) ?></span>
+                </label>
+                <select id="available_stores" name="selected_store" class="selected-store select admin__control-select">
+                    <?php foreach ($availableStores as $storeId => $storeName): ?>
+                        <option value="<?= $escaper->escapeHtmlAttr($storeId) ?>"><?= $escaper->escapeHtml($storeName) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="admin__field-control admin__field-control-csv-uploader">
+                <label for="import_csv_file" class="admin__field-label">
+                    <span><?= $escaper->escapeHtml(__('Import CSV File:'))?></span>
+                </label>
+                <input type="file" id="import_csv_file" name="import_csv_file" class="input-file required-entry"/>
+            </div>
+        </div>
+        <div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+            <button title="<?= $escaper->escapeHtmlAttr(__('Import CSV File'))?>" type="button" class="action-default scalable import-submit primary" data-ui-id="widget-button-0">
+                <span><?= $escaper->escapeHtml(__('Generate'))?></span>
+            </button>
+        </div>
+    </fieldset>
+</form>
+
+<script>
+    require(['jquery', "mage/mage", "loadingPopup"], function($) {
+        $('#import-form').mage('form').mage('validation');
+        (function ($) {
+            $('.import-submit').click(function() {
+                if($(':input[name="import_csv_file"]').val()) {
+                    $('body').loadingPopup();
+                    $(this.form).submit();
+                }
+            });
+        })($);
+    });
+</script>
